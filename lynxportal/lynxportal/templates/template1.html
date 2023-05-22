@@ -7,7 +7,6 @@
 </head>
 <body>
 <h1>Lynx Historical Records</h1>
-
 <!-- Replace 'field1', 'field2', etc. with your actual field names -->
 <table>
     <thead>
@@ -21,9 +20,9 @@
     <tbody>
     {% for record in records %}
     <tr>
-        <td>{{ record.OP_Id }}</td>
-        <td>{{ record.OP_StageName }}</td>
-        <td>{{ record.OP_FinalWeight }}</td>
+        <td>{{ record.op_id }}</td>
+        <td>{{ record.op_stagename }}</td>
+        <td>{{ record.op_finalweight }}</td>
         <!-- Add more cells for additional fields -->
     </tr>
     {% endfor %}
