@@ -5,8 +5,12 @@ from .models import models
 from django.shortcuts import render
 
 def my_view(request):
-    records = models.LynxHistorical.objects.all()  # or use a filter if you don't want all records
-    return render(request, 'template1.html', {'records': records})
+    records = models.LynxHistorical.objects.all().order_by('timestamp')
+    timestamps = [record.timestamp for record in records]
+    weights = [record.op_finalweight for record in records]
+    return render(request, 'template1.html', {'timestamp': timestamps, 'OP_FinalWeight': weights})
+    # records = models.LynxHistorical.objects.all()  # or use a filter if you don't want all records
+    # return render(request, 'template1.html', {'records': records})
 
 def tablaTest(request):
 

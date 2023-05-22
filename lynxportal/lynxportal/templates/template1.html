@@ -3,30 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Lynx Historical Records</title>
-    <!-- Add your own stylesheets, scripts, etc. here -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 <h1>Lynx Historical Records</h1>
-<!-- Replace 'field1', 'field2', etc. with your actual field names -->
-<table>
-    <thead>
-    <tr>
-        <th>Field 1</th>
-        <th>Field 2</th>
-        <th>Field 3</th>
-        <!-- Add more headers for additional fields -->
-    </tr>
-    </thead>
-    <tbody>
-    {% for record in records %}
-    <tr>
-        <td>{{ record.op_id }}</td>
-        <td>{{ record.op_stagename }}</td>
-        <td>{{ record.op_finalweight }}</td>
-        <!-- Add more cells for additional fields -->
-    </tr>
-    {% endfor %}
-    </tbody>
-</table>
+<canvas id="myChart"></canvas>
+<script>
+    const ctx = document.getElementById('myChart').getContext('2d');
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: {{ timestamps|safe }},
+            datasets: [{
+                label: 'OP_FinalWeight over Time',
+                data: {{ weights|safe }},
+                fill: false,
+                borderColor: 'rgb(75, 192, 192)',
+                tension: 0.1
+            }]
+        },
+    });
+</script>
 </body>
 </html>
