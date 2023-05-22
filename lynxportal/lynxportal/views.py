@@ -1,13 +1,13 @@
 import datetime
 from django.http import HttpResponse
 from django.template import Template, Context
-from .models.lynxHistorical import LynxHistorical
+from .models import models
 from django.shortcuts import render
-import pandas as pd
 
-# def tablaTest(request):
-#     data = pd.DataFrame(list(LynxHistorical.objects.all().values()))
-#     return render(request, 'template1.html', {'data': data})
+def my_view(request):
+    records = models.LynxHistorical.objects.all()  # or use a filter if you don't want all records
+    return render(request, 'template1.html', {'records': records})
+
 def tablaTest(request):
 
     altFile = open("/Users/robot314/IdeaProjects/lynxkpi/lynxportal/lynxportal/templates/template1.html")

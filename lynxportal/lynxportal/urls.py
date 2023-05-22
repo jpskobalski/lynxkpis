@@ -16,11 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from lynxportal.views import tablaTest
+from lynxportal.views import my_view
 from lynxportal.views import tiempoFecha
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', tablaTest),
+    path('', my_view),
     path('time/', tiempoFecha),
 ]

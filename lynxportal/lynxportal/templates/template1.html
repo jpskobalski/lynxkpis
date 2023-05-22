@@ -1,26 +1,30 @@
-{% load static %}
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Your Page Title</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <meta charset="UTF-8">
+    <title>Lynx Historical Records</title>
+    <!-- Add your own stylesheets, scripts, etc. here -->
 </head>
 <body>
+<h1>Lynx Historical Records</h1>
+
+<!-- Replace 'field1', 'field2', etc. with your actual field names -->
 <table>
     <thead>
     <tr>
-        {% for column in data.columns %}
-        <th>{{ column }}</th>
-        {% endfor %}
+        <th>Field 1</th>
+        <th>Field 2</th>
+        <th>Field 3</th>
+        <!-- Add more headers for additional fields -->
     </tr>
     </thead>
     <tbody>
-    {% for row in data.values %}
+    {% for record in records %}
     <tr>
-        {% for cell in row %}
-        <td>{{ cell }}</td>
-        {% endfor %}
+        <td>{{ record.OP_Id }}</td>
+        <td>{{ record.OP_StageName }}</td>
+        <td>{{ record.OP_FinalWeight }}</td>
+        <!-- Add more cells for additional fields -->
     </tr>
     {% endfor %}
     </tbody>

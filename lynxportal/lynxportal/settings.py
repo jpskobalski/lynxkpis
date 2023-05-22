@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'lynxportal',
 ]
 
 MIDDLEWARE = [
@@ -80,7 +81,7 @@ DATABASES = {
         'SCHEMA': 'LYNX',
         'WAREHOUSE': 'COMPUTE_WH',
         'USER': 'JSKOBALSKI',
-        'PASSWORD': '',
+        'PASSWORD': 'Lain0com!',
         'ACCOUNT': 'ahfsxir-hr64479',
         # Include 'OPTIONS' if you need to specify any other
         # snowflake.connector.connect() parameters.
