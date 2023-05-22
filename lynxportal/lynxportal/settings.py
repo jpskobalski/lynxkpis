@@ -81,7 +81,7 @@ DATABASES = {
         'SCHEMA': 'LYNX',
         'WAREHOUSE': 'COMPUTE_WH',
         'USER': 'JSKOBALSKI',
-        'PASSWORD': 'Lain0com!',
+        'PASSWORD': '',
         'ACCOUNT': 'ahfsxir-hr64479',
         # Include 'OPTIONS' if you need to specify any other
         # snowflake.connector.connect() parameters.
